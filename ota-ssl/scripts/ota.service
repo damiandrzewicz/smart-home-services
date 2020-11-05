@@ -1,0 +1,13 @@
+[Unit]
+Description=ESP32 OTA service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=damian
+ExecStart=/home/damian/Documents/Repositories/smart-home-system/smart-home-server/services/ota-ssl/ota_service.sh -s
+
+[Install]
+WantedBy=multi-user.target
